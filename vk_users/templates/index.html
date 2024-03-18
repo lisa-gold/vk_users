@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        .alert {
+            background-color: rgb(192, 235, 128);
+        }
+    </style>
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="{{ category }}" role="alert">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <h2>Collected data</h2>
+    <button><a href="/add_users">Add more users</a></button>
+    <button><a href="/add_cities">Add cities</a></button>
+    {% if users %}
+    <div>{{ users[0] }}</div>
+    <div>{{ cities }}</div>
+    <p>Users</p>
+    <table>
+        <tr>
+            <th>birthday</th>
+            <th>city</th>
+            <th>country</th>
+            <th>can_post</th>
+            <th>can_write_private_message</th>
+            <th>mobile_phone</th>
+            <th>home_phone</th>
+            <th>last_seen (> 1704060060)</th>
+            <th>followers_count</th>
+            <th>sex</th>
+            <th>relation</th>
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>can_access_closed</th>
+            <th>is_closed</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.bdate }}</td>
+            <td>{{ user.city_id }}</td>
+            <td>{{ user.country_id }}</td>
+            <td>{{ user.can_post }}</td>
+            <td>{{ user.can_write_private_message }}</td>
+            <td>{{ user.mobile_phone }}</td>
+            <td>{{ user.home_phone }}</td>
+            <td>{{ user.last_seen }}</td>
+            <td>{{ user.followers_count }}</td>
+            <td>{{ user.sex }}</td>
+            <td>{{ user.relation }}</td>
+            <td>{{ user.first_name }}</td>
+            <td>{{ user.last_name }}</td>
+            <td>{{ user.can_access_closed }}</td>
+            <td>{{ user.is_closed }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+ 
+        
+
+    {% endif %}
+</body>
+</html>
