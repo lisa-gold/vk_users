@@ -10,10 +10,7 @@ packages = [{include = "vk_users"}]
 python = "^3.10"
 python-dotenv = "^1.0.1"
 requests = "^2.31.0"
-flask = "^3.0.2"
-gunicorn = "^21.2.0"
 datetime = "^5.4"
-tqdm = "^4.66.2"
 psycopg2-binary = "^2.9.9"
 
 [tool.poetry.group.dev.dependencies]
@@ -22,3 +19,7 @@ flake8 = "^6.1.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+start = "vk_users.users:main"
+start-cities = "vk_users.cities:main"
