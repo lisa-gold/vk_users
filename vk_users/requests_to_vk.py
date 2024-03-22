@@ -50,6 +50,5 @@ def get_user_info(month, year, day=21, filter_value=''):
         **AUTH_PARAMS
     }
     response = requests.get(URL + method, params=user_params)
-    print(response.json())
     users_list = response.json()["response"]["items"]
     return users_list
