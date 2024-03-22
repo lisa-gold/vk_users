@@ -4,10 +4,12 @@ This is an app that collects users of vk.ru
 ### Instalation
 
 Create account on vk.ru
+
 Instructions https://dev.vk.com/ru/api/access-token/implicit-flow-user
+
 Generate token https://vkhost.github.io/
 
-Create database
+Create database, add [tables](https://github.com/lisa-gold/vk_users/blob/main/database.sql)
 
 <pre>
 # clone the repository
