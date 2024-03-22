@@ -1,6 +1,3 @@
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS cities;
-
 CREATE TABLE cities (
     id INTEGER PRIMARY KEY,
     title VARCHAR(255),
