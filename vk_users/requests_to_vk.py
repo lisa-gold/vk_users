@@ -42,7 +42,7 @@ def get_user_info(month, year, day=21, filter_value=''):
         'count': 1000,
         'age_from': 18,
         'sort': 1,
-        'can_write_private_message': 1,
+        # 'can_write_private_message': 1,
         # 'sex': sex,
         'birth_day': day,
         'birth_month': month,
